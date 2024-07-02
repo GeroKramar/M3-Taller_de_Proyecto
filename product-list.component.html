@@ -1,0 +1,24 @@
+
+<div>
+    <h1>Gestión de Inventarios</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.name }}</td>
+          <td>{{ product.quantity }}</td>
+          <td>
+            <input type="number" [(ngModel)]="product.newQuantity">
+            <button (click)="updateQuantity(product, product.newQuantity)">Actualizar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
